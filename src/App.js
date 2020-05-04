@@ -1,22 +1,11 @@
 import React from 'react';
-
-// class App extends Component{
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <label htmlFor="bar">bar</label>
-//         <input type="text" onClick={()=>{console.log("i am click")}} />
-//       </React.Fragment>
-   
-//     );
-//   }
-// }
+import propTypes from "prop-types";
 const App = () => {
   const profiles = [
-    {name : "taro",age:10},
-    {name :"hanako",age:99},
-    {name:"jiro",age:100},
-    {name:"saburo"}
+    {name :"Taro",age:10},
+    {name :"Hanako",age:100},
+    {name:"Jiro",age:100},
+    {name:"Noname",age:999}
   ]
   return (
     <React.Fragment>
@@ -33,7 +22,8 @@ const User = (props) => {
   return <div>I'm {props.name} and {props.age} years old.</div>
 }
 
-User.defaultProps = {
-  age : 1
+User.propTypes = {
+  name: propTypes.string,
+  age:propTypes.number.isRequired
 }
 export default App;
